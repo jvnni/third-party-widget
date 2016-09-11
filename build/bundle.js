@@ -586,9 +586,9 @@ var TokenForm = function (_Preact$Component) {
     _this.state = _this.getInitState();
     _this.handleSubmit = _this.handleSubmit.bind(_this);
     _this.handleChange = _this.handleChange.bind(_this);
-    _this.handleFocus = _this.handleFocus.bind(_this);
-    _this.handleBlur = _this.handleBlur.bind(_this);
-    _this.styles = (0, _styles2.default)(props.color);
+    // this.handleFocus = this.handleFocus.bind(this);
+    // this.handleBlur = this.handleBlur.bind(this);
+    // styles = styles(props.color);
     return _this;
   }
 
@@ -604,20 +604,6 @@ var TokenForm = function (_Preact$Component) {
         doctype: '',
         docnum: ''
       };
-    }
-  }, {
-    key: 'handleFocus',
-    value: function handleFocus(eve) {
-      for (var prop in this.styles.field_input_focus) {
-        eve.target.style[prop] = this.styles.field_input_focus[prop];
-      }
-    }
-  }, {
-    key: 'handleBlur',
-    value: function handleBlur(eve) {
-      for (var prop in this.styles.field_input_focus) {
-        eve.target.style[prop] = this.styles.field_input[prop];
-      }
     }
   }, {
     key: 'handleSubmit',
@@ -645,73 +631,73 @@ var TokenForm = function (_Preact$Component) {
 
       return _preact2.default.h(
         'form',
-        { action: './', method: 'POST', className: 'paymentForm', id: 'paymentForm', onSubmit: this.handleSubmit, style: this.styles.paymentForm },
+        { action: './', method: 'POST', className: _styles2.default.paymentForm + ' ' + 'paymentForm', id: 'paymentForm', onSubmit: this.handleSubmit },
         _preact2.default.h(
           'div',
-          { className: 'fieldList', style: this.styles.fieldList },
+          { className: _styles2.default.fieldList + ' ' + 'fieldList' },
           _preact2.default.h(
             'div',
-            { className: 'field', style: this.styles.field },
+            { className: _styles2.default.field + ' ' + 'field' },
             _preact2.default.h(
               'label',
-              { htmlFor: 'number', style: this.styles.field_label },
+              { htmlFor: 'number', className: _styles2.default.field_label },
               'Credit Card Number'
             ),
             _preact2.default.h('input', { type: 'number', id: 'number', minLength: '13', maxLength: '16', placeholder: 'Credit Card Number', pattern: '[0-9]{13,16}', ref: function ref(e) {
                 return _this2.$number = e;
-              }, required: true, onChange: this.handleChange, onFocus: this.handleFocus, onBlur: this.handleBlur, style: this.styles.field_input })
+              }, required: true, onChange: this.handleChange, className: _styles2.default.field_input })
           ),
           _preact2.default.h(
             'div',
-            { className: 'field', style: this.styles.field },
+            { className: _styles2.default.field + ' ' + 'field' },
             _preact2.default.h(
               'label',
-              { htmlFor: 'holdername', style: this.styles.field_label },
+              { htmlFor: 'holdername', className: _styles2.default.field_label },
               'Name on card'
             ),
-            _preact2.default.h('input', { type: 'text', id: 'holdername', placeholder: 'Name on card', required: true, onChange: this.handleChange, onFocus: this.handleFocus, onBlur: this.handleBlur, style: this.styles.field_input })
+            _preact2.default.h('input', { type: 'text', id: 'holdername', placeholder: 'Name on card', required: true, onChange: this.handleChange, className: _styles2.default.field_input })
           ),
           _preact2.default.h(
             'div',
-            { className: 'field field-alt', style: Object.assign({}, this.styles.field, this.styles.field_alt) },
+            { className: _styles2.default.field + ' ' + _styles2.default.field_alt + ' ' + 'field field-alt' },
             _preact2.default.h(
               'label',
-              { htmlFor: 'expiration', style: this.styles.field_label },
+              { htmlFor: 'expiration', className: _styles2.default.field_label },
               'Expiration Date'
             ),
-            _preact2.default.h('input', { type: 'number', id: 'expiration', placeholder: 'MMYY', pattern: '^((0[1-9])|(1[0-2]))\\/(\\d{2})$', required: true, onChange: this.handleChange, onFocus: this.handleFocus, onBlur: this.handleBlur, style: this.styles.field_input })
+            _preact2.default.h('input', { type: 'number', id: 'expiration', placeholder: 'MMYY', pattern: '^((0[1-9])|(1[0-2]))\\/(\\d{2})$', required: true, onChange: this.handleChange, className: _styles2.default.field_input })
           ),
           _preact2.default.h(
             'div',
-            { className: 'field field-alt field-ccv', style: Object.assign({}, this.styles.field, this.styles.field_alt) },
+            { className: _styles2.default.field + ' ' + _styles2.default.field_alt + ' ' + 'field field-alt field-cvv' },
             _preact2.default.h(
               'label',
-              { htmlFor: 'ccv', style: this.styles.field_label },
+              { htmlFor: 'ccv', className: _styles2.default.field_label },
               'CCV'
             ),
-            _preact2.default.h('input', { type: 'text', id: 'ccv', minLength: '3', maxLength: '4', placeholder: 'CCV', pattern: '[0-9]{3,4}', required: true, onChange: this.handleChange, onFocus: this.handleFocus, onBlur: this.handleBlur, style: this.styles.field_input })
+            _preact2.default.h('input', { type: 'text', id: 'ccv', minLength: '3', maxLength: '4', placeholder: 'CCV', pattern: '[0-9]{3,4}', required: true, onChange: this.handleChange, className: _styles2.default.field_input })
           ),
           _preact2.default.h(
             'div',
-            { className: 'field', style: this.styles.field },
+            { className: _styles2.default.field + ' ' + 'field' },
             _preact2.default.h(
               'label',
-              { htmlFor: 'email', style: this.styles.field_label },
+              { htmlFor: 'email', className: _styles2.default.field_label },
               'Email'
             ),
-            _preact2.default.h('input', { type: 'email', name: 'email', id: 'email', placeholder: 'Email', required: true, onChange: this.handleChange, onFocus: this.handleFocus, onBlur: this.handleBlur, style: this.styles.field_input })
+            _preact2.default.h('input', { type: 'email', name: 'email', id: 'email', placeholder: 'Email', required: true, onChange: this.handleChange, className: _styles2.default.field_input })
           ),
           _preact2.default.h(
             'div',
-            { className: 'field field-dropdown', style: Object.assign({}, this.styles.field, this.styles.field_input) },
+            { className: 'field field-dropdown', style: Object.assign({}, _styles2.default.field, _styles2.default.field_input) },
             _preact2.default.h(
               'label',
-              { htmlFor: 'doctype', style: this.styles.field_label },
+              { htmlFor: 'doctype', className: _styles2.default.field_label },
               'Document type'
             ),
             _preact2.default.h(
               'select',
-              { id: 'doctype', required: true, onChange: this.handleChange, style: Object.assign({}, this.styles.field_input, this.styles.field_select) },
+              { id: 'doctype', required: true, onChange: this.handleChange, className: _styles2.default.field_input + ' ' + _styles2.default.field_select },
               _preact2.default.h(
                 'option',
                 { value: 'dni' },
@@ -726,21 +712,21 @@ var TokenForm = function (_Preact$Component) {
           ),
           _preact2.default.h(
             'div',
-            { className: 'field', style: this.styles.field },
+            { className: _styles2.default.field + ' ' + 'field' },
             _preact2.default.h(
               'label',
-              { htmlFor: 'docnum', style: this.styles.field_label },
+              { htmlFor: 'docnum', className: _styles2.default.field_label },
               'Document number'
             ),
-            _preact2.default.h('input', { type: 'number', name: 'docnum', id: 'docnum', placeholder: 'Document number', required: true, onChange: this.handleChange, onFocus: this.handleFocus, onBlur: this.handleBlur, style: this.styles.field_input })
+            _preact2.default.h('input', { type: 'number', name: 'docnum', id: 'docnum', placeholder: 'Document number', required: true, onChange: this.handleChange, className: _styles2.default.field_input })
           )
         ),
         _preact2.default.h(
           'div',
-          { className: 'submit', style: this.styles.submit },
+          { className: 'submit', style: _styles2.default.submit },
           _preact2.default.h(
             'button',
-            { type: 'submit', style: this.styles.submit_button },
+            { type: 'submit', className: _styles2.default.submit_button },
             'Pay now'
           )
         )
@@ -760,103 +746,7 @@ exports.default = TokenForm;
 module.exports = exports['default'];
 
 },{"1":1,"3":3}],3:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = styles;
-/**
- * Styles
- */
-function styles() {
-  var color = arguments.length <= 0 || arguments[0] === undefined ? '#009EE3' : arguments[0];
-
-  return {
-    paymentForm: {
-      boxSizing: 'border-box',
-      fontFamily: 'Courier, monospace'
-    },
-
-    fieldList: {
-      boxSizing: 'border-box',
-      padding: '20px 40px 40px',
-      background: '#FFF'
-    },
-
-    field: {
-      margin: '0 0 12px',
-      padding: '0',
-      boxSizing: 'border-box'
-    },
-
-    field_label: {
-      position: 'absolute',
-      zIndex: '-1'
-    },
-
-    field_input: {
-      color: '#000',
-      width: '100%',
-      padding: '10px 10px 14px',
-      border: '0 solid',
-      borderBottomWidth: '1px',
-      borderBottomColor: '#DDD',
-      boxShadow: '0 -1px 0 #FFF inset',
-      borderRadius: '0',
-      boxSizing: 'border-box',
-      fontSize: '1em',
-      fontFamily: 'Courier, monospace',
-      transition: 'all 0.3s'
-    },
-
-    field_input_focus: {
-      outline: '0',
-      borderBottomColor: color,
-      boxShadow: '0 -1px 0 ' + color + ' inset'
-    },
-
-    field_select: {
-      background: 'none',
-      borderBottomColor: 'transparent'
-    },
-
-    field_alt: {
-      display: 'inline-block',
-      width: '50%',
-      paddingRight: '20px'
-    },
-
-    submit: {
-      outline: '0',
-      boxSizing: 'border-box',
-      margin: '-12px 0 0',
-      padding: '0 40px 40px',
-      background: '#FFF',
-      borderRadius: '0 0 4px 4px',
-      fontSize: '100%'
-    },
-
-    submit_button: {
-      margin: '0',
-      outline: '0',
-      boxSizing: 'border-box',
-      padding: '18px 0',
-      fontSize: '1em',
-      border: '0',
-      cursor: 'pointer',
-      color: '#FFF',
-      textShadow: '0 0 3px rgba(0, 0, 0, 0.4)',
-      width: '100%',
-      background: color,
-      borderRadius: '4px',
-      boxShadow: '1px 2px 8px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.5) inset',
-      fontFamily: 'Courier, monospace'
-    }
-  };
-}
-module.exports = exports['default'];
-
+module.exports = {"paymentForm":"_paymentForm_x41n7_1","fieldList":"_fieldList_x41n7_6","field":"_field_x41n7_6","field_label":"_field_label_x41n7_18","field_input":"_field_input_x41n7_23","field_select":"_field_select_x41n7_44","field_alt":"_field_alt_x41n7_49","submit":"_submit_x41n7_55","submit_button":"_submit_button_x41n7_65"}
 },{}],4:[function(require,module,exports){
 'use strict';
 
@@ -893,7 +783,7 @@ function PaymentForm(options) {
 
 
 /**
- * Component
+ * React Component
  */
 exports.default = PaymentForm;
 module.exports = exports['default'];

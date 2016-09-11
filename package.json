@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "An example of third-party widgets from React components",
   "scripts": {
-    "build": "NODE_ENV=production browserify -t [ ./preactify.js ] -t [ babelify ] -p [ bundle-collapser/plugin ] -s PaymentForm src/js/index.js -o build/bundle.js",
-    "build:watch": "NODE_ENV=develop watchify -t [ ./preactify.js ] -t [ babelify ] -p [ bundle-collapser/plugin ] -s PaymentForm src/js/index.js -o build/bundle.js",
+    "build": "NODE_ENV=production browserify -t [ ./preactify.js ] -t [ babelify ] -p [ bundle-collapser/plugin ] -p [ css-modulesify --after autoprefixer --autoprefixer.browsers '> 1%' -o build/main.css ] -s PaymentForm src/js/index.js -o build/bundle.js",
+    "build:watch": "NODE_ENV=develop watchify -t [ ./preactify.js ] -t [ babelify ] -p [ bundle-collapser/plugin ] -p [ css-modulesify --after autoprefixer --autoprefixer.browsers '> 1%' -o build/main.css ] -s PaymentForm src/js/index.js -o build/bundle.js",
     "dist": "npm run build && uglifyjs build/bundle.js -m -o build/bundle.min.js",
     "release": "npm run dist && gzip -9 build/bundle.min.js",
     "lint": "eslint"
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/pazguille/third-party-widget#readme",
   "dependencies": {
+    "classnames": "^2.2.5",
     "preact": "6.0.1"
   },
   "devDependencies": {

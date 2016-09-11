@@ -1,0 +1,89 @@
+.paymentForm {
+  box-sizing: border-box;
+  font-family: Courier, monospace;
+}
+
+.fieldList {
+  box-sizing: border-box;
+  padding: 20px 40px 40px;
+  background: #FFF;
+}
+
+.field {
+  margin: 0 0 12px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.field_label {
+  position: absolute;
+  z-index: -1;
+}
+
+.field_input {
+  color: #000;
+  width: 100%;
+  padding: 10px 10px 14px;
+  border: 0 solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #DDD;
+  box-shadow: 0 -1px 0 #FFF inset;
+  border-radius: 0;
+  box-sizing: border-box;
+  font-size: 1em;
+  font-family: Courier, monospace;
+  transition: all 0.3s;
+}
+
+.field_input:focus {
+  outline: 0;
+  border-bottom-color: #009ee3;
+  box-shadow: 0 -1px 0 #009ee3 inset;
+}
+
+.field_select {
+  background: none;
+  border-bottom-color: transparent;
+}
+
+.field_alt {
+  display: inline-block;
+  width: 50%;
+  padding-right: 20px;
+}
+
+.submit {
+  outline: 0;
+  box-sizing: border-box;
+  margin: -12px 0 0;
+  padding: 0 40px 40px;
+  background: #FFF;
+  border-radius: 0 0 4px 4px;
+  font-size: 100%;
+}
+
+.submit_button {
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+  padding: 18px 0;
+  font-size: 1em;
+  border: 0;
+  cursor: pointer;
+  color: #FFF;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  background: #009ee3;
+  border-radius: 4px;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.5) inset;
+  font-family: Courier, monospace;
+}
+
+.submit_button:hover {
+  background: #06C;
+}
+
+.submit_button:active {
+  background: #06C;
+  box-shadow: inset 0 3px 14px rgba(0, 0, 0, 0.3);
+}
